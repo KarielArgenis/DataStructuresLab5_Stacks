@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.ArrayList;
+
 public class SymmetricStringAnalyzer {
 	private String s; 
 	public SymmetricStringAnalyzer(String s) {
@@ -37,11 +39,20 @@ public class SymmetricStringAnalyzer {
 	}
 
 	public String parenthesizedExpression() 
-	throws StringIsNotSymmetricException 
-	{
-		// ADD MISSING CODE
-		
-		return null;  // need to change if necessary....
+			throws StringIsNotSymmetricException {
+		ArrayList<String> string = new ArrayList<String>();
+		for (int i=0; i<s.length(); i++) {
+			char c = s.charAt(i);
+			if (Character.isUpperCase(c)) {
+				string.add("<");
+				string.add(Character.toString(c));
+			}
+			else if (Character.isLowerCase(c)) {
+				string.add(Character.toString(c));
+				string.add(">");
+			}
+		}
+		return string.toString();
 	}
 
 }

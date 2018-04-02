@@ -15,6 +15,8 @@ public class Tester1 {
 					s.showReverse(); 
 				else if (n % 2 == 1)
 					s.push(n); 
+				else if (n % 2 == 0)
+					s.push(n); 
 				else
 					System.out.println("Extracting element: " + s.pop()); 
 			}
